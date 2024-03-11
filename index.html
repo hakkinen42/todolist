@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todolist</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap-icons/font/bootstrap-icons.css"> 
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+
+            <header class="bg-dark text-white">
+                <div class="ps-3 py-1" id="todolist">
+                    <h3 class="mb-0">To Do List</h3>
+                </div>
+    
+            </header>
+            <main class="bg-light py-3">
+
+                <div class="col-md-12">
+                    <div class="col-md-10 container">
+                        <div class="card mb-5 mt-3">
+                            <div class="card-header fw-semibold">
+                             Create Task
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-9" id='taskInput'>
+                                        
+                                        <input type="text" class=" form-control" placeholder="New task Name">
+                                    </div>
+                                    <div class="col-md-3">
+        
+                                        <button class="btn btn-success form-control" id="btnAddTaskInput">Add Task List <i class="bi bi-plus"></i> </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mb-5">
+                            <div class="card-header">
+                                <div class="row">
+
+                                    <div class="col-md-3 py-2 fw-semibold"> Task list</div>
+                                    <div class="col-md-3">
+                                        <button class="btn btn-success form-control" id="btnTaskCompleted">Tamamlandi</button>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <button class="btn btn-danger form-control" btnTaskRemoveFromList>Listeden Cikar</button>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <button class="btn btn-primary form-control" id="btnTaskAllSelect">Tumunu Sec</button>
+                                    </div>
+                                </div>
+                                
+                             
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        
+                                        <ul class="list-group" id="taskList">
+                                            <li class="list-group-item bg-secondary mb-2">
+                                                <input type="checkbox" id="task1" name="task1" value="Bike">
+                                                <label for="task1"> Lorem, ipsum dolor.</label> <i class="bi bi-trash-fill float-end delete-task text-primary" id="0"></i>
+                                            </li>
+                                            <li class="list-group-item bg-secondary mb-2">
+                                                <input type="checkbox" id="task1" name="task1" value="Bike">
+                                                <label for="task1"> Lorem, ipsum dolor.</label> <i class="bi bi-trash-fill float-end delete-task text-primary" id="1"></i>
+                                            </li>
+                                            <li class="list-group-item bg-secondary mb-2">
+                                                <input type="checkbox" id="task1" name="task1" value="Bike">
+                                                <label for="task1"> Lorem, ipsum dolor.</label> <i class="bi bi-trash-fill float-end delete-task text-primary" id="2"></i>
+                                            </li>
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mb-5">
+                            <div class="card-header">
+                                <div class="row">
+                                    <div class="fw-semibold col-md-6 pt-2">
+                                            Completed Tasks
+                                    </div>
+                                    <div class="col-md-6">
+
+                                        <button class="btn btn-warning text-white form-control" id="btnClearCompletedList">Clear List  </button>
+                                    </div>
+                                </div>
+             
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        
+                                        <ul class="list-group" id="completedList">
+                                            <li class="list-group-item bg-secondary mb-2">Lorem, ipsum.
+                                            </li>
+                                            <li class="list-group-item bg-secondary mb-2">Lorem, ipsum.
+                                            </li>
+                                            <li class="list-group-item bg-secondary mb-2">Lorem, ipsum.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mb-5">
+                            <div>
+                                
+                            <select class="form-select form-select-sm" aria-label="Small select example">
+                                <option value="0">Sehir Secin</option>
+                                <option value="1">Adana</option>
+                                <option value="2">Konya</option>
+                            </select>
+                            </div> 
+                                
+                        </div>
+                    </div>
+                        
+                </div>
+        
+                
+            </main>
+            <footer class="bg-dark text-white">
+                
+
+                    <div class="container col-md-4 text-center ">
+    
+                        <p class="">&copy; 2024 Hakki Yalcin</p>
+                    </div>
+                
+    
+    
+            </footer>
+        </div>
+
+
+    </div>
+
+    
+
+
+
+
+    <script src="assets/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script  src="assets/js/myScript.js"></script>
+</body>
+</html>
