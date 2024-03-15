@@ -5,6 +5,7 @@ $(document).ready(function(){
     let btnTaskCompleted = $("#btnTaskCompleted");
     let btnTaskRemoveFromList = $("#btnTaskRemoveFromList");
     let btnTaskAllSelect = $("#btnTaskAllSelect");
+    let btnClearCompletedList =  $("#btnClearCompletedList");
 
     let tasksList = $("#tasksList");
     let completedList =  $("#completedList");
@@ -71,10 +72,36 @@ $(document).ready(function(){
         list(tasks, tasksList);
         list(completedTasks, completedList);
     });
+
     btnTaskAllSelect.click(function(){
        selectAll();
    });
+
+    btnClearCompletedList.click(function(){
+        removeCompleted();
+        list(completedTasks, completedList);
+    });
+
+    document.body.addEventListener( "click", function ( e ) {
+      
+        let element = e.target;
+        let elementId = element.id;
+        let elementIsTaskDelete = element.className.includes("delete-task") ; 
         
+        if(elementIsTaskDelete && idExistsTasks(elementId) && (taskName = tasks[elementId]) && isNameExistsTasks(taskName)){ 
+
+        tasks.splice(elementId,1);
+        localStorage.setItem('tasks',JSON.stringify(tasks));
+        list(tasks, tasksList);
+
+        }
+    });
+    function idExistsTasks(id){
+        return tasks[id] !== undefined;
+    }
+    function isNameExistsTasks(taskName){
+        return tasks.find(item => item  === taskName )!== undefined;
+    }
 
     function list(items, listPlace) {
 
@@ -135,6 +162,11 @@ $(document).ready(function(){
 
         allTask.prop("checked", true);
     }
+    function removeCompleted() {
 
+        completedTasks.length = 0;
+        localStorage.setItem("completedTasks", JSON.stringify(completedTasks));
+        
+    }
 
 });
